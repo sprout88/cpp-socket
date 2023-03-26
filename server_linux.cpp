@@ -29,8 +29,10 @@ int main(){
     
     // 서버 소켓 TCP/IP 프로토콜 생성
     serv_sock = socket(PF_INET, SOCK_STREAM, 0);
-    if(serv_sock == -1) errhandle("socket() ERR!")
-    
+    if(serv_sock == -1){
+        errhandle("socket() ERR!");
+    }
+
     // serv_sock에 bind로 주소 넣기 위한 밑작업
     memset(&st_serv_addr,0,sizeof(st_serv_addr));
     st_serv_addr.sin_family = AF_INET;
@@ -39,8 +41,11 @@ int main(){
     
     // bind()로 서버 소켓에 주소정보 할당
     int bindret = bind(serv_sock, (struct sockaddr*) &st_serv_addr, sizeof(st_serv_addr) );
-    if(bindret == -1) errhandle("bind() ERR!");
     
+    if(bindret == -1){
+        errhandle("bind() ERR!");
+    }
+
     // listen()으로 서버소켓으로 오는 클라이언트 요청 대기
     int listenret = listen(serv_sock,10);
     if(listenret == -1) errhandle("listen() ERR!");
