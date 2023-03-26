@@ -37,14 +37,14 @@ int main(){
     memset(&st_serv_addr,0,sizeof(st_serv_addr));
     st_serv_addr.sin_family = AF_INET;
     st_serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    st_serv_addr.sin_port = htons(port)
+    st_serv_addr.sin_port = htons(port);
     
     // bind()로 서버 소켓에 주소정보 할당
     int bindret = bind(serv_sock, (struct sockaddr*) &st_serv_addr, sizeof(st_serv_addr) );
-    
-    if(bindret == -1){
-        errhandle("bind() ERR!");
-    }
+
+    // if(bindret == -1){
+    //     errhandle("bind() ERR!");
+    // }
 
     // listen()으로 서버소켓으로 오는 클라이언트 요청 대기
     int listenret = listen(serv_sock,10);
