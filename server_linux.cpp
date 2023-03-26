@@ -24,7 +24,7 @@ int main(){
     char recvmsg[1024];
     
     // ip, port 정의
-    char ip[] = "127.0.0.1" //
+    char ip[] = "127.0.0.1"; //
     int port = 10000;
     
     // 서버 소켓 TCP/IP 프로토콜 생성
