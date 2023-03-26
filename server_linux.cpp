@@ -52,9 +52,7 @@ int main(){
     
     // accept 하기위한 클라이언트 구조체 크기 밑작업 및 함수호출
     int clnt_addr_size = sizeof(st_clnt_addr);
-    int acceptret = accept(serv_sock,
-                          (struct sockaddr*) &st_clnt_addr,
-                           &clnt_addr_size );
+    int acceptret = accept(serv_sock,(struct sockaddr*) &st_clnt_addr, (socklen_t*)&clnt_addr_size );
     if(acceptret == -1) errhandle("accept() ERR!");
     
     // sendmsg 보내고, recvmsg에 수신된 string데이터 담기
