@@ -4,6 +4,7 @@
 #include <unistd.h> // 파일 관리 함수 헤더
 #include <arpa/inet.h>
 #include <sys/socket.h> // 소켓프로그래밍 함수선언
+#include <iostream>
 #define PORT 81
 void errhandle(char *errmsg){
 	fputs(errmsg, stderr);
