@@ -12,6 +12,7 @@ void errhandle(char *errmsg){
 }
  
 int main(){
+    std::cout<<"server start!!"<<std::endl;
     // 서버, 클라이언트 소켓 파일디스크립터 변수 선언
 	int serv_sock, clnt_sock;
     
