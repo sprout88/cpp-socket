@@ -10,6 +10,8 @@
 #include <WinSock2.h>
 // 수신 버퍼 사이즈
 #define BUFFERSIZE 1024
+// 포트 번호
+#define PORT 81
 using namespace std;
 // 수신 했을 때, 콘솔 출력 및 echo 데이터 만드는 함수
 char* print(vector<char>* str)
@@ -142,7 +144,7 @@ int main()
   // Any인 경우는 호스트를 127.0.0.1로 잡아도 되고 localhost로 잡아도 되고 양쪽 다 허용하게 할 수 있따. 그것이 INADDR_ANY이다.
   addr.sin_addr.s_addr = htonl(INADDR_ANY);
   // 서버 포트 설정...저는 9090으로 설정함.
-  addr.sin_port = htons(9090);
+  addr.sin_port = htons(PORT);
   // 설정된 소켓 정보를 소켓에 바인딩한다.
   if (bind(serverSock, (SOCKADDR*)&addr, sizeof(SOCKADDR_IN)) == SOCKET_ERROR)
   {
