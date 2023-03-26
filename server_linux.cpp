@@ -4,7 +4,7 @@
 #include <unistd.h> // 파일 관리 함수 헤더
 #include <arpa/inet.h>
 #include <sys/socket.h> // 소켓프로그래밍 함수선언
- 
+#define PORT 81
 void errhandle(char *errmsg){
 	fputs(errmsg, stderr);
     fputc('\n', stderr);
@@ -25,7 +25,7 @@ int main(){
     
     // ip, port 정의
     char ip[] = "127.0.0.1"; //
-    int port = 10000;
+    int port = PORT;
     
     // 서버 소켓 TCP/IP 프로토콜 생성
     serv_sock = socket(PF_INET, SOCK_STREAM, 0);
